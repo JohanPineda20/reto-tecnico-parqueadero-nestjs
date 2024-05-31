@@ -28,7 +28,8 @@ export class UsersService {
       throw new NotFoundException("role not found");
     }
     createUserDto.password = await bcryptjs.hash(createUserDto.password, 10)
-    return this.usersRepository.save({...createUserDto, role});
+    const {password, role: { name: roleName }, ...user} = await this.usersRepository.save({...createUserDto, role});
+    return {...user, roleName};
   }
   async findOneByEmail(email: string){
     return await this.usersRepository.findOne({
@@ -40,7 +41,14 @@ export class UsersService {
     user.token = token;
     await this.usersRepository.save(user);
   }
-  async findOneByToken(token:string){
+  async findOneByToken(token: string){
     return await this.usersRepository.findOneBy({token})
+  }
+  async findOneById(id: number){
+    const user = await this.usersRepository.findOne({where: {id}, relations: ['role'] });
+    if(!user){
+      throw new NotFoundException(`user not found`);
+    }
+    return user;
   }
 }
