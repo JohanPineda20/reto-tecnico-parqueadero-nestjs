@@ -17,8 +17,10 @@ export class User {
     email: string;
     @Column({nullable: false})
     password: string;
+    @Column()
+    token: string
 
     @ManyToOne(() => Role)
     @JoinColumn({name: "role_id"})
-    private role: Role;
+    role: Role;
 }
