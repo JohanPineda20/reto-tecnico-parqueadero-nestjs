@@ -1,5 +1,6 @@
+import { ParkingVehicle } from "src/parking_vehicle/entities/parkingVehicle.entity";
 import { User } from "src/users/entities/user.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Parking {
@@ -19,4 +20,6 @@ export class Parking {
     @JoinColumn({name: 'user_id'})
     user: User;
 
+    @OneToMany(() => ParkingVehicle, (parkingVehicle) => parkingVehicle.parking, { cascade: ['remove'] })
+    parkingVehicles: ParkingVehicle[];
 }

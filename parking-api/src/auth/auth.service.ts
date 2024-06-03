@@ -25,4 +25,12 @@ export class AuthService {
         this.usersService.saveToken(user, token);
         return {token};
     }
+    async logout(authHeader?: string){
+        const [type, token] = authHeader.split(' ') ?? [];
+        const jwt = type === 'Bearer' ? token : undefined;
+        const user = await this.usersService.findOneByToken(jwt);
+            if (user) {
+                this.usersService.saveToken(user, null)
+            }
+    }
 }

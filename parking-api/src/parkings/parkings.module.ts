@@ -9,5 +9,6 @@ import { UsersModule } from 'src/users/users.module';
   imports: [TypeOrmModule.forFeature([Parking]), UsersModule],
   controllers: [ParkingsController],
   providers: [ParkingsService],
+  exports: [ParkingsService]
 })
 export class ParkingsModule {}

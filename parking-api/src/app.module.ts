@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RolesModule } from './roles/roles.module';
 import { AuthModule } from './auth/auth.module';
 import { ParkingsModule } from './parkings/parkings.module';
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { ParkingVehicleModule } from './parking_vehicle/parkingVehicle.module';
 import 'dotenv/config'
 
 @Module({
@@ -16,11 +18,13 @@ import 'dotenv/config'
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     autoLoadEntities: true,
-    synchronize: true,
+    synchronize: false,
   }), 
   UsersModule, 
   RolesModule, 
   AuthModule, 
-  ParkingsModule],
+  ParkingsModule, 
+  VehiclesModule, 
+  ParkingVehicleModule],
 })
 export class AppModule {}

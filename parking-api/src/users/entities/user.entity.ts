@@ -7,7 +7,7 @@ export class User {
     id: number;
     @Column({nullable: false})
     name: string;
-    @Column()
+    @Column({nullable: true})
     lastname: string;
     @Column({length: 10, unique: true})
     dni: string;
@@ -17,7 +17,7 @@ export class User {
     email: string;
     @Column({nullable: false})
     password: string;
-    @Column()
+    @Column({nullable: true})
     token: string
 
     @ManyToOne(() => Role)

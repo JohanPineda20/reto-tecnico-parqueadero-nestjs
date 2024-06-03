@@ -39,7 +39,7 @@ export class ParkingsService {
   async update(id: number, updateParkingDto: UpdateParkingDto) {
     const parking = await this.parkingsRepository.findOne({
       where: { id },
-      relations: ['user']
+      relations: ['user','parkingVehicles']
     })
     if(!parking){
       throw new NotFoundException(`parking not found`);
@@ -58,7 +58,10 @@ export class ParkingsService {
         throw new ConflictException(`user is not a socio`);
       }
     }
-    const { userId, ...updateParkingData } = updateParkingDto;
+    const vehiclesInParking = parking.parkingVehicles.filter(parkingVehicle => parkingVehicle.departureDate === null);
+    if(updateParkingDto.capacity < vehiclesInParking.length ) throw new ConflictException(`capacity must be greater than or equal to the number of vehicles currently parked: ${vehiclesInParking.length}`)
+    const {userId, ...updateParkingData } = updateParkingDto;
+    delete parking.parkingVehicles;
     const updatedParking = this.parkingsRepository.merge(parking, updateParkingData, user ? {user} : {})
     const {user:{email}, ...updatedParkingData} = await this.parkingsRepository.save(updatedParking);
     return {...updatedParkingData, ownerEmail: email}
