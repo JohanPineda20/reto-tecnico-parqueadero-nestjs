@@ -8,13 +8,13 @@ import { Auth } from './decorators/auth.decorator';
 export class AuthController {
     constructor(private readonly authService: AuthService) {}
     @HttpCode(HttpStatus.OK)
-    @Post('/login')
+    @Post('login')
     login(@Body() loginDto: LoginDto) {
         return this.authService.login(loginDto);
     }
     @Auth()
     @HttpCode(HttpStatus.NO_CONTENT)
-    @Get('/logout')
+    @Get('logout')
     logout(@Req() req: Request) {
         return this.authService.logout(req.headers.authorization);
     }

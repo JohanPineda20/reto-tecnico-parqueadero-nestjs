@@ -6,6 +6,7 @@ import { Auth } from 'src/auth/decorators/auth.decorator';
 import { RoleEnum } from 'src/common/enums/role.enum';
 import { Request } from 'express';
 import { Payload } from 'src/common/interfaces/payload';
+import { AuthUser } from 'src/auth/decorators/auth-user.decorator';
 
 @Controller('parkings')
 export class ParkingsController {
@@ -36,7 +37,7 @@ export class ParkingsController {
   }
   @Auth(RoleEnum.ADMIN, RoleEnum.SOCIO)
   @Get()
-  findAll(@Req() req: Request & {user: Payload}) {
-    return this.parkingsService.findAll(req.user);
+  findAll(@AuthUser() user: Payload) {
+    return this.parkingsService.findAll(user);
   }
 }

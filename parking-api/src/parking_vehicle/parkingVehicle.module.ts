@@ -7,6 +7,7 @@ import { ParkingsModule } from 'src/parkings/parkings.module';
 import { UsersModule } from 'src/users/users.module';
 import { VehiclesModule } from 'src/vehicles/vehicles.module';
 import { HttpModule } from '@nestjs/axios';
+import { MetricsController } from './metrics.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([ParkingVehicle]), 
@@ -14,7 +15,7 @@ import { HttpModule } from '@nestjs/axios';
             UsersModule, 
             VehiclesModule, 
             HttpModule],
-  controllers: [ParkingVehicleController],
+  controllers: [ParkingVehicleController, MetricsController],
   providers: [ParkingVehicleService],
 })
 export class ParkingVehicleModule {}

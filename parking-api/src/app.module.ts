@@ -6,7 +6,6 @@ import { AuthModule } from './auth/auth.module';
 import { ParkingsModule } from './parkings/parkings.module';
 import { VehiclesModule } from './vehicles/vehicles.module';
 import { ParkingVehicleModule } from './parking_vehicle/parkingVehicle.module';
-import 'dotenv/config'
 
 @Module({
   imports: [
