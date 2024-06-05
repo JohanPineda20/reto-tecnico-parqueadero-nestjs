@@ -18,6 +18,7 @@ import { ParkingVehicleModule } from './parking_vehicle/parkingVehicle.module';
     database: process.env.DB_DATABASE,
     autoLoadEntities: true,
     synchronize: true,
+    logging: true
   }), 
   UsersModule, 
   RolesModule, 
