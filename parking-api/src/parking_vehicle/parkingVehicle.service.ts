@@ -1,4 +1,4 @@
-import { ConflictException, HttpException, Injectable, Logger } from '@nestjs/common';
+import { ConflictException, Injectable, Logger } from '@nestjs/common';
 import { CreateParkingVehicleDto } from './dto/create-parking_vehicle.dto';
 import { Payload } from 'src/common/interfaces/payload';
 import { ParkingVehicle } from './entities/parkingVehicle.entity';

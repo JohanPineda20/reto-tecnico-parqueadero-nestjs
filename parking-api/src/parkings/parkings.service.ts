@@ -8,6 +8,7 @@ import { RoleEnum } from 'src/common/enums/role.enum';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/users/entities/user.entity';
 import { Payload } from 'src/common/interfaces/payload';
+import { PaginationRequestDto } from 'src/common/dto/pagination.request.dto';
 
 @Injectable()
 export class ParkingsService {
@@ -84,26 +85,46 @@ export class ParkingsService {
     return { ...parkingSaved, ownerEmail: user.email};
   }
 
-  async findAll(user: Payload){
-    let parkings: Parking[];
+  async findAll(user: Payload, pagination: PaginationRequestDto) {
+    const page = pagination.page;
+    const size = pagination.size;
+    let parkingsPagination: [Parking[], number];
 
   if (user.role === RoleEnum.ADMIN) {
-    parkings = await this.parkingsRepository.find({
-      relations: ['user'],
+    parkingsPagination = await this.parkingsRepository.findAndCount({
+      skip: (page - 1) * size,
+      take: size,
+      relations: ['user']
     });
   } else {
-    parkings = await this.parkingsRepository.find({
+    parkingsPagination = await this.parkingsRepository.findAndCount({
+      skip: (page - 1) * size,
+      take: size,
       where: { user: { id: Number(user.sub) } },
       relations: ['user'],
     });
   }
+    const [data, totalElements] = parkingsPagination;
+    const totalPages = Math.ceil(totalElements / size);
+    const isFirstPage = page === 1;
+    const isLastPage = page === totalPages;
 
-  return parkings.map(parking => ({
-    id: parking.id,
-    name: parking.name,
-    capacity: parking.capacity,
-    costPerHour: parking.costPerHour,
-    userEmail: parking.user ? parking.user.email : null,
-  }));
+    const parkings = data.map(parking => ({
+      id: parking.id,
+      name: parking.name,
+      capacity: parking.capacity,
+      costPerHour: parking.costPerHour,
+      userEmail: parking.user ? parking.user.email : null,
+    }));
+
+  return {
+    parkings,
+    page,
+    size,
+    totalElements,
+    totalPages,
+    isFirstPage,
+    isLastPage,
+  };
   }
 }
