@@ -45,7 +45,7 @@ export class ParkingsService {
     if(!parking){
       throw new NotFoundException(`parking not found`);
     }
-    if(parking.name !== updateParkingDto.name) {
+    if(updateParkingDto.name && parking.name !== updateParkingDto.name) {
       const parking1 = await this.parkingsRepository.findOneBy({name: updateParkingDto.name})
       if(parking1){
         throw new ConflictException(`parking already exists with name: ${updateParkingDto.name}`);

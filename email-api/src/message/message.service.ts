@@ -26,7 +26,7 @@ export class MessageService {
     let startOfDay: Date;
     let endOfDay: Date;
     if(date){
-      const regex = /^\d{4}\-\d{2}\-\d{2}$/;
+      const regex = /^\d{4}-\d{2}-\d{2}$/;
       if(!regex.test(date)) throw new ConflictException('Invalid date format. Use YYYY/MM/DD');
       let dateFormatted = new Date(date);
       if (isNaN(dateFormatted.getTime())) {

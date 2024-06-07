@@ -16,7 +16,7 @@ export class ParkingVehicle {
     @Column({type: 'decimal', precision: 10, scale: 2, nullable: true})
     payment: number
 
-    @ManyToOne(() => Parking, (parking) => parking.parkingVehicles)
+    @ManyToOne(() => Parking, (parking) => parking.parkingVehicles, {onDelete: 'CASCADE'})
     @JoinColumn({name: 'parking_id'})
     parking: Parking
 
