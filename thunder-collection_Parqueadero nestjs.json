@@ -1,0 +1,436 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Parqueadero nestjs",
+    "collectionId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+    "dateExported": "2024-06-10T17:21:56.434Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "51cde406-9c22-4c9b-8ff9-a8bcda6c8095",
+            "name": "metrics",
+            "containerId": "48eafdc6-8185-42b4-a893-a4336175b88f",
+            "created": "2024-06-04T14:30:21.678Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "739b6643-24a3-447e-8f60-389ef3bd9721",
+            "name": "socio",
+            "containerId": "48eafdc6-8185-42b4-a893-a4336175b88f",
+            "created": "2024-05-31T16:17:48.868Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "admin",
+            "containerId": "48eafdc6-8185-42b4-a893-a4336175b88f",
+            "created": "2024-05-31T16:17:24.181Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "48eafdc6-8185-42b4-a893-a4336175b88f",
+            "name": "parking-api",
+            "containerId": "",
+            "created": "2024-06-05T19:52:14.365Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "e2caeb41-a01b-4728-b52a-127238d35a5c",
+            "name": "emai-api",
+            "containerId": "",
+            "created": "2024-06-05T19:52:26.824Z",
+            "sortNum": 60000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "a81519d4-e6c4-4d9f-be8c-2d8b67296061",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "crear socio",
+            "url": "localhost:3000/api/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-31T16:17:10.933Z",
+            "modified": "2024-06-03T19:29:47.633Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"johan\",\n    \"lastname\": \"pineda\",\n    \"dni\": \"1234567890\",\n    \"phone\": \"3113423277\",\n    \"email\": \"johan@gmail.com\",\n    \"password\": \"contraseña\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6ImJlYmFAZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDI2MTAyLCJleHAiOjE3MTc0NDc3MDJ9.omQ1pMUDitKUkw7ULdFN9jPbZ1ddTUPHbeTx8YA_y7o"
+            }
+        },
+        {
+            "_id": "27e22c24-7d56-442c-81b9-e5e9be249111",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "739b6643-24a3-447e-8f60-389ef3bd9721",
+            "name": "obtener todos los parqueaderos asociados",
+            "url": "localhost:3000/api/parkings",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-31T22:49:16.107Z",
+            "modified": "2024-06-03T14:48:31.023Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6ImJlYmFAZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDI2MTAyLCJleHAiOjE3MTc0NDc3MDJ9.omQ1pMUDitKUkw7ULdFN9jPbZ1ddTUPHbeTx8YA_y7o"
+            }
+        },
+        {
+            "_id": "f2001d09-d9b6-480c-aaa4-802172f2bc9c",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "48eafdc6-8185-42b4-a893-a4336175b88f",
+            "name": "login",
+            "url": "localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-07T14:41:18.724Z",
+            "modified": "2024-06-07T14:41:18.724Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"admin@mail.com\",\n  \"password\": \"admin\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "20d9982d-99d9-48a2-8639-a02e16221661",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "48eafdc6-8185-42b4-a893-a4336175b88f",
+            "name": "logout",
+            "url": "localhost:3000/api/auth/logout",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-06-07T14:41:45.953Z",
+            "modified": "2024-06-07T14:41:45.953Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9oYW5AZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDQzMzAyLCJleHAiOjE3MTc0NjQ5MDJ9.Y9cZH_J3e_sQ9_L24anr9WFLQHlWTftvm6YVM1VCns0"
+            }
+        },
+        {
+            "_id": "686056d8-23f3-4067-84f7-e0792360b243",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "crear parqueadero",
+            "url": "localhost:3000/api/parkings",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-31T16:17:56.459Z",
+            "modified": "2024-06-03T14:49:24.978Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"parqueadero ccc\",\n  \"capacity\": 30,\n  \"costPerHour\": 2000,\n  \"userId\": 2\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6ImJlYmFAZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDI2MTAyLCJleHAiOjE3MTc0NDc3MDJ9.omQ1pMUDitKUkw7ULdFN9jPbZ1ddTUPHbeTx8YA_y7o"
+            }
+        },
+        {
+            "_id": "46c73e95-3871-4baf-8bee-54e93a584ce0",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "obtener parqueadero por id",
+            "url": "localhost:3000/api/parkings/l",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-31T19:52:01.494Z",
+            "modified": "2024-06-05T05:13:45.335Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc1NjQzMDAsImV4cCI6MTcxNzU4NTkwMH0.NcPZGzJAw_SJujNN0gvk1bF8rK_32q8a1WUrAA6O6o4"
+            }
+        },
+        {
+            "_id": "23ca391c-d36a-436a-9e86-13b5fbd0c098",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "actualizar parqueadero",
+            "url": "localhost:3000/api/parkings/2",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2024-05-31T20:43:25.640Z",
+            "modified": "2024-06-07T14:44:08.580Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc3NzEzMjIsImV4cCI6MTcxNzc5MjkyMn0.OEL29c7h_Ju3PjjIEmOAXEowfWmrMnWlYeLEdN15scU"
+            }
+        },
+        {
+            "_id": "f49cb614-ecae-43c5-a724-175fdbeca0b1",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "eliminar parqueadero",
+            "url": "localhost:3000/api/parkings/2",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-05-31T21:22:30.967Z",
+            "modified": "2024-06-05T16:20:14.381Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc2MDAzMDYsImV4cCI6MTcxNzYyMTkwNn0.gCPt6tp1ZILryTaYcjF6_lq3c5fuBaOMiHVHAqRY7IA"
+            }
+        },
+        {
+            "_id": "25b7bfc3-17b7-441d-8a06-38d1f232684e",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "obtener todos los parqueaderos",
+            "url": "localhost:3000/api/parkings?page=1&size=0",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-05-31T22:01:36.526Z",
+            "modified": "2024-06-05T16:15:37.164Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "0",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc2MDAzMDYsImV4cCI6MTcxNzYyMTkwNn0.gCPt6tp1ZILryTaYcjF6_lq3c5fuBaOMiHVHAqRY7IA"
+            }
+        },
+        {
+            "_id": "36d4dbae-f9ae-4fcd-9749-00fcd40199d9",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "739b6643-24a3-447e-8f60-389ef3bd9721",
+            "name": "obtener los vehiculos en un parqueadero del socio",
+            "url": "localhost:3000/api/parking-vehicle/parking/9/vehicle",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-06-03T14:51:09.985Z",
+            "modified": "2024-06-03T15:48:55.928Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6ImJlYmFAZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDI2MTAyLCJleHAiOjE3MTc0NDc3MDJ9.omQ1pMUDitKUkw7ULdFN9jPbZ1ddTUPHbeTx8YA_y7o"
+            }
+        },
+        {
+            "_id": "e77095b4-1808-48f8-bdae-1c228b4fbb9e",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "d77991a3-7d8d-493d-a58c-8a0b08473f11",
+            "name": "obtener los vehiculos en un parqueadero",
+            "url": "localhost:3000/api/parkings/4/vehicle",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-06-03T14:51:43.942Z",
+            "modified": "2024-06-03T14:52:05.082Z",
+            "headers": []
+        },
+        {
+            "_id": "4b8aa148-7257-46f9-9e90-b3d552dc61fd",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "739b6643-24a3-447e-8f60-389ef3bd9721",
+            "name": "registrar entrada de vehiculo en un parqueadero del socio",
+            "url": "localhost:3000/api/parking-vehicle/register-entry",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-06-03T19:19:20.390Z",
+            "modified": "2024-06-03T20:03:13.918Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"licensePlate\": \"abc123\",\n  \"parkingId\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9oYW5AZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDQzMzAyLCJleHAiOjE3MTc0NjQ5MDJ9.Y9cZH_J3e_sQ9_L24anr9WFLQHlWTftvm6YVM1VCns0"
+            }
+        },
+        {
+            "_id": "95c6aa15-7128-4c3a-9810-f2c7768845cb",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "739b6643-24a3-447e-8f60-389ef3bd9721",
+            "name": "registrar salida de vehiculo en un parqueadero del socio",
+            "url": "localhost:3000/api/parking-vehicle/register-departure",
+            "method": "PATCH",
+            "sortNum": 120000,
+            "created": "2024-06-03T20:02:53.724Z",
+            "modified": "2024-06-03T22:42:33.046Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"licensePlate\": \"PER876\",\n  \"parkingId\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9oYW5AZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NDU0NDUxLCJleHAiOjE3MTc0NzYwNTF9.JkhKfMmahJPAApdeERfXWa6zHJ2sQt4YRIxime1agrs"
+            }
+        },
+        {
+            "_id": "11d1ef25-a1dc-4cb7-ba46-a018994ca321",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "51cde406-9c22-4c9b-8ff9-a8bcda6c8095",
+            "name": "top 10 vehiculos más parqueados",
+            "url": "localhost:3000/api/metrics/top-10-most-parked-vehicles",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-06-04T14:31:01.280Z",
+            "modified": "2024-06-04T20:54:55.385Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc1MzQ0NzAsImV4cCI6MTcxNzU1NjA3MH0.p3oTlg8uyiB21em9Vz3nKN6ktHCHeLWhpNkBhdKXbi0"
+            }
+        },
+        {
+            "_id": "de6443c4-385d-4034-9204-c004c07302cf",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "51cde406-9c22-4c9b-8ff9-a8bcda6c8095",
+            "name": "top 10 vehiculos más parqueados en un parqueadero",
+            "url": "localhost:3000/api/metrics/top-10-most-parked-vehicles/parking/1",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-06-04T15:10:55.890Z",
+            "modified": "2024-06-04T22:01:52.545Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc1MzQ0NzAsImV4cCI6MTcxNzU1NjA3MH0.p3oTlg8uyiB21em9Vz3nKN6ktHCHeLWhpNkBhdKXbi0"
+            }
+        },
+        {
+            "_id": "1e74bab4-e308-4b9e-befd-e3182a5240c1",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "51cde406-9c22-4c9b-8ff9-a8bcda6c8095",
+            "name": "obtener vehiculos parqueados por primera vez en un parqueadero",
+            "url": "localhost:3000/api/metrics/first-time-parked-vehicles/parking/2",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-06-04T15:29:45.804Z",
+            "modified": "2024-06-04T15:37:00.370Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9oYW5AZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NTEyNDc1LCJleHAiOjE3MTc1MzQwNzV9.kJ6rRegLLPgdVc_pDm-W1cpO9x-K6weyHqGCyRif07s"
+            }
+        },
+        {
+            "_id": "a5637557-b8ac-4962-9396-6bb7f4f00d9e",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "51cde406-9c22-4c9b-8ff9-a8bcda6c8095",
+            "name": "buscar vehiculo por placa en los parqueaderos",
+            "url": "localhost:3000/api/metrics/vehicle?licensePlate=A",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-06-04T15:31:23.775Z",
+            "modified": "2024-06-05T14:13:30.793Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "licensePlate",
+                    "value": "A",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc1OTY3NjIsImV4cCI6MTcxNzYxODM2Mn0.VvgwHAjopdAp6nDZSLQt1ip9zYu9jFF_RG9lqJNzJkc"
+            }
+        },
+        {
+            "_id": "68949f33-b8db-470b-89be-10ac3a0b8216",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "51cde406-9c22-4c9b-8ff9-a8bcda6c8095",
+            "name": "obtener los ingresos del dia, semana, mes y año de un parqueadero",
+            "url": "localhost:3000/api/metrics/cash-income/parking/1",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2024-06-04T16:08:20.226Z",
+            "modified": "2024-06-04T16:24:23.101Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9oYW5AZ21haWwuY29tIiwicm9sZSI6IlNPQ0lPIiwiaWF0IjoxNzE3NTEyNDc1LCJleHAiOjE3MTc1MzQwNzV9.kJ6rRegLLPgdVc_pDm-W1cpO9x-K6weyHqGCyRif07s"
+            }
+        },
+        {
+            "_id": "2b4fddf5-03fa-41b8-b0c5-6e05a84c7887",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "e2caeb41-a01b-4728-b52a-127238d35a5c",
+            "name": "enviar mensaje",
+            "url": "localhost:3001/api/message",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2024-06-05T19:54:47.955Z",
+            "modified": "2024-06-05T22:13:15.348Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"johan@gmail.com\",\n  \"message\": \"salida exitosa\",\n  \"licensePlate\": \"SAW96N\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "68f6f834-4027-4c53-afb2-c5ad22c2f5b9",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "e2caeb41-a01b-4728-b52a-127238d35a5c",
+            "name": "obtener el email con mas mensajes enviados",
+            "url": "localhost:3001/api/message/most-frequent-email",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-06-05T20:32:23.178Z",
+            "modified": "2024-06-05T20:32:51.487Z",
+            "headers": []
+        },
+        {
+            "_id": "422aeae5-1086-4bea-8fb3-e03007156f5c",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "e2caeb41-a01b-4728-b52a-127238d35a5c",
+            "name": "obtener la cantidad de mensajes por fecha",
+            "url": "localhost:3001/api/message?date=2024-06-09",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2024-06-05T20:33:29.330Z",
+            "modified": "2024-06-05T22:39:25.598Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "date",
+                    "value": "2024-06-09",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "911acd09-c10a-452c-84a2-b36f6d1a2354",
+            "colId": "76e7b851-bfa4-4c58-a3b8-f007c62b6538",
+            "containerId": "e2caeb41-a01b-4728-b52a-127238d35a5c",
+            "name": "obtener el top 10 de licensePlates con mas mensajes enviados",
+            "url": "localhost:3001/api/message/most-frequent-license-plates",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2024-06-05T20:35:03.809Z",
+            "modified": "2024-06-05T20:36:20.653Z",
+            "headers": []
+        }
+    ],
+    "ref": "KXBjNgx3gT0ezqtJh0NCQ2jXo7D1aGbIOBJPOQwyLt5x9aqGJDzGGukgbDNn3MCofoja1DhLQSdXg8QQcejk8g"
+}
